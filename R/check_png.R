@@ -12,5 +12,6 @@ check_png <- function(file_name) {
   my_plot <- ggplot2::ggplot(data.frame(x = 1:10, ymin = 1:10, ymax = 10 + 1:10), ggplot2::aes(x)) +
     ggplot2::geom_ribbon(ggplot2::aes(ymin = ymin, ymax = ymax), alpha = 0.5) +
     ggplot2::coord_cartesian(c(1, 9))
+  print(my_plot)
   invisible(my_plot)
 }
