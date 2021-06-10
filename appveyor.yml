@@ -41,6 +41,7 @@ test_script:
 on_failure:
   - 7z a failure.zip *.Rcheck\*
   - appveyor PushArtifact failure.zip
+  - appveyor PushArtifact tests\testthat\test.png
 
 artifacts:
   - path: '*.Rcheck\**\*.log'
