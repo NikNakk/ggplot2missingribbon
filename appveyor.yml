@@ -39,9 +39,10 @@ test_script:
   - travis-tool.sh run_tests
 
 on_failure:
-  - 7z a failure.zip *.Rcheck\*
-  - appveyor PushArtifact failure.zip
+#  - 7z a failure.zip *.Rcheck\*
+#  - appveyor PushArtifact failure.zip
   - appveyor PushArtifact tests\testthat\test.png
+  - appveyor PushArtifact tests\testthat\test_grid.png
 
 artifacts:
   - path: '*.Rcheck\**\*.log'
