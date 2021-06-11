@@ -33,15 +33,15 @@ check_png <- function(file_name) {
 check_png_grid <- function(file_name) {
   grDevices::png(file_name)
   on.exit(grDevices::dev.off())
-  my_gt <- gtable::gtable(widths = grid::unit(c(0.1, 1, 0.1), "null"),
-                   heights = grid::unit(c(0.1, 1, 0.1), "null"))
+  my_gt <- gtable::gtable(widths = grid::unit(1, "null"),
+                   heights = grid::unit(1, "null"))
   my_poly <- grid::polygonGrob(
       grid::unit(c(0.05, 1.07, 1.07, 0.05), "native"),
       grid::unit(c(0.5, 0.95, 0.48, 0.05), "native"),
       id = rep(1, 4),
       gp = grid::gpar(fill = "#33333380")
     )
-  my_gt <- gtable::gtable_add_grob(my_gt, my_poly, 2, 2, 2, 2, 1, "on")
+  my_gt <- gtable::gtable_add_grob(my_gt, my_poly, 1, 1, 1, 1, 1, "on")
   grid::grid.newpage()
   grid::grid.draw(my_gt)
 }
